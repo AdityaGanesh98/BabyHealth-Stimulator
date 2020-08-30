@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BabyHealth Stimulator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="firstTrimester.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">BabyHealth </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/home">Home </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <% } else { %>
+         <li><a href="/profile"><%= currentUser.username %></a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<div class="container">
+  <div class="jumbotron">
+    <h1>First Trimester</h1>      
+   <div class="para">
+    <h2>First trimester: key stages</h2>
+The first trimester begins on the first day of your last period and lasts until the end of week 12. This means that by the time you know for sure you're pregnant, you might already be five or six weeks pregnant!
+
+A lot happens during these first three months. The fertilised egg rapidly divides into layers of cells and implants in the wall of your womb where it carries on growing. These layers of cells become an embryo, which is what the baby is called at this stage.
+
+During this trimester, your baby grows faster than at any other time. By six weeks, a heartbeat can usually be heard and by the end of week 12, your baby's bones, muscles and all the organs of the body have formed. At this point, your baby looks like a tiny human being and is now called a fetus. He or she will even be practising swallowing!</div>
+<br>
+<div class="para">
+	<h2>Baby’s growth during the first trimester</h2>
+	During the first trimester alone your baby changes from a single fertilized cell (a zygote), to the embryo that implants itself in your uterine wall, to a peach-sized bundle of growing limbs and body systems. Organs take shape, and baby starts to move.  Here are a few of the big highlights happening in this exciting time:
+	<br>
+	<br>
+
+<strong>Baby’s bones: </strong>By about week 6, baby starts to sprout arms, legs, hands and feet — and fingers and toes around week 10. 
+<br><br>		
+<strong>Hair and nails: </strong> Skin begins forming between weeks 5 and 8, with hair follicles and nail beds forming around week 11.
+<br><br>
+<strong>Digestive system: </strong> By about week 8, baby’s intestines will begin forming, and your baby will have already gone through two sets of kidneys (with the third and final set on its way!).<br><br>
+<strong>Sense of touch: </strong> Your baby will have touch receptors on his face (mostly lips and nose) around week 8. By week 12, he’ll have receptors on his genitals, palms and the soles of his feet.<br><br>
+<strong>Eyesight: </strong> Optic nerves (which pass info from the eyes to the brain and back) and lenses begin to form by week 4, with the retina beginning to form around week 8.<br><br>
+<strong>Heart: </strong> By week 5, the tube that will become your baby’s heart begins to beat spontaneously. It will become stronger and more regular — and you’ll be able to hear it! — around week 9 or 10 (though sometimes later, depending on your baby’s position in your uterus).<br><br>
+<strong>Brain: </strong> By about week 8 of pregnancy, your baby’s brain will be wiggling his developing limbs.<br><br>
+<strong>Sense of taste: </strong> Your baby will have developed taste buds that connect to his brain by about week 8 — but he’ll need taste pores before he can taste the surrounding amniotic fluid (which, by the way, tastes like your most recent meal).<br><br>
+Other major first-trimester milestones include the formation of muscles, the production of white blood cells to fight off germs and the development of vocal cords.
+
+</div>
+<div class="para">
+	<h2>Changes in your body</h2>
+	A lot happens for you in the first trimester, too. A couple of the most common early symptoms of pregnancy you may experience:<br><br>
+
+<strong>Frequent urination. </strong>Towards the end of the first trimester, you will feel like urinating more often. This is because your growing uterus pushes on your bladder. You may even leak a little urine when you cough or sneeze.
+	<br><br>
+
+<strong>Lightheadedness. </strong> Your body is working overtime to make extra blood to support your baby. This can cause you to feel dizzy or lightheaded. Hunger, weakness, or stress can cause these symptoms as well.
+<br><br>
+<strong>Heartburn. </strong> The muscles that break down food become more relaxed during pregnancy. Hormone changes also slow down this process. Food also stays in your stomach longer to give your body more time to absorb nutrients. All these things can cause or worsen heartburn.
+<br><br>
+<strong>Constipation. </strong> You should be taking a daily prenatal vitamin that contains iron. The iron in the vitamin can lead to constipation. The slow process of breaking down food also can cause constipation, gas, and bloating. Your doctor may suggest taking fiber supplements or a stool softener to provide relief. <strong>Make sure you drink plenty of water (about eight glasses per day)</strong>. Tell your doctor if you have severe problems. They may switch you to a different prenatal vitamin.
+<br><br>
+<strong>Visible veins. </strong> Your body makes extra blood and your heart pumps faster to meet the needs of pregnancy. This can cause the blue veins in your belly, breasts, and legs to become more noticeable. You may develop spider veins on your face, neck, or arms. These are tiny blood vessels that branch out from a central area, like the legs of a spider.
+<br><br>
+<strong>Skin changes. </strong> You may notice that your skin looks more rosy and shiny. Some people call this a “pregnancy glow.” It is caused by increased blood circulation. Pregnancy hormones can cause extra oil on your skin. It may cause you to have flares of acne.
+<br><br>
+<strong>Breast changes. </strong> Most women notice changes in their breasts early in pregnancy. The hormones in your body change to prepare for breastfeeding. As this occurs, your breasts may feel tender and swollen. You might notice small bumps forming in the area around your nipples. Your breasts will continue to grow and change throughout your pregnancy. They may feel even bigger and fuller later on.
+<br><br>
+<strong>Vaginal changes. </strong> The lining of your vagina will become thicker and less sensitive. You may notice a thin, white discharge. This is normal during pregnancy. Mild vaginal bleeding (spotting) is also normal and common. However, you should call your doctor if you have vaginal bleeding. If the bleeding is heavy or painful, go to the emergency room.
+<br><br>
+<strong>A growing belly. </strong> Your waistline will begin to expand as your baby and uterus grow larger. Depending on your size before pregnancy, you may not notice this change until the second trimester. It is normal to gain no or little weight in your first trimester.
+<br><br>
+<strong>Emotional symptoms. </strong> Your hormones are on overload during pregnancy. You might feel moody, forgetful, or unable to focus. Fatigue and stress can increase these symptoms.
+</div>
+<div class="para">
+	<h3><a href="/firstTrimester_diet"> Pregnancy Diet Plan</a></h3>
+	If you're looking for ideas on what to eat to have a healthy pregnancy, you've come to the right place.
+	<br>
+	These meal plans, also called pregnancy diet plans or diet charts, include delicious vegetarian or non-vegetarian options and dishes from North or South India. They are made using foods that have the nutrients you need at your stage of pregnancy.
+
+You can pick and choose from the delicious dishes suggested to further adapt the meal plan to your tastes.
+</div>
+<br>
+<span class="para"><h3><strong>Take a quiz to check your progress and your health, and get related adivises from our experts.</strong></h3></span>
+<br>
+<center>
+	<button type="button" class="btn btn-primary"><a class="link" href="/secondTrimester">Second Trimester</a></button>
+	<button type="button" class="btn btn-primary"><a class="link" href="/quiz">Quiz</a></button>
+		<button type="button" class="btn btn-primary"><a class="link" href="/thirdTrimester">Third Trimester</a></button>
+
+
+</center>
+  </div>   
+</div>
+    
+    
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

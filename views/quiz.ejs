@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BabyHealth Stimulator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Playfair+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">BabyHealth </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/home">Home </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <% } else { %>
+         <li><a href="/profile"><%= currentUser.username %></a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="wrap">
+  <div id="arrow-left" class="arrow"></div>
+  <div class="container">
+  <div class="jumbotron">
+  <div id="slider">
+      <form action="/profile" method="POST">
+          
+      
+    <div class="slide slide1 para"> 
+      <center>
+        <h2><strong>Pregnancy assement questions</strong></h2>
+        <p><h4>BabyHealth Stimulator provides a unique feature of asking questions</h4></p>
+        <p><h4><strong>Instructions:</strong></h4></p>
+      </center>
+        <li>You will be asked series of questions, which you need to answer genuinely so that we can give suggestions based on that </li>
+        <li>The suggestions are provided on the same slide based on the answers that you give</li>
+        <li>These suggestions are gathered from different resorces that will provide you a healthy pregnancy</li>
+    </div>
+    <div class="slide slide2">
+        <div class="box para">
+          <center>
+            <h3><strong>What is your body temperature</strong></h3>
+         <input type="number" name="q1" id="temperature"><br><br>
+         <input type="checkbox" id="temp_range">What is the normal body temperature during pregnancy<br>
+         <button type="button" class="btn btn-primary" onclick="q1ans()">Submit</button>
+          </center>
+        </div>
+      
+      <div id="q1wrong" class="para">
+           <h3><strong>Your body temperature is high.</strong></h3>
+           These are the common causes of fever <br>
+           •  <Strong>Sickness </Strong>— for example, flu or malaria<br>
+           • <strong>An infection of part of the body</strong> — like a bladder infection, or an infection of the uterus<br>
+           • A mild fever can also be caused by <strong>dehydration </strong>(loss of body fluids due to not drinking enough water).<br>
+
+           <h3><strong>How will a fever affect my baby?</strong></h3>
+If an expectant mother’s body temperature goes from 98.6 degrees to a fever, it’s a sign that she is fighting an infection. That’s why it’s essential to seek treatment right away.<br>
+
+A new study done on animal embryos does show a link between fever early in pregnancy and an increased risk of heart and jaw defects at birth. Further research is needed to establish whether fever itself — not the infection causing it — increases the risk of birth defects in humans.<br>
+
+If you are in your first trimester and have a fever higher than 102 degrees, be sure to seek treatment right away. This may help prevent short- and long-term complications for your developing baby.<br>
+
+<h3><strong>Prevention</strong></h3>
+Although people cannot always prevent a fever, they may be able to reduce the risk of getting sick in the first place.<br>
+
+Some methods of prevention include:<br>
+
+<li>getting the flu shot</li>
+<li>frequently washing the hands</li>
+<li>staying away from sick people when possible</li>
+
+<h3><strong>When to see a doctor</strong></h3>
+Fevers are not usually a sign of a serious illness, but during pregnancy, they may cause complications.
+
+If any of the following symptoms occur during pregnancy, seek medical help:<br>
+
+<li>severe thirst</li>
+<li>low urine output</li>
+<li>dark urine</li>
+<li>lightheadedness</li>
+<li>severe cramps</li>
+<li>difficulty breathing</li>
+<li>decreased movement of the fetus</li>
+<li>It is also important to seek help if the fever does not go down.</li>
+
+If a person is concerned for any other reason, they should contact a doctor.
+         </div>
+         <div id="q1wrong2" class="para">
+          The American College of Obstetricians and Gynecologists (ACOG) recommends that pregnant women never let their core body temperature rise above 102.2 degrees Fahrenheit. (A pregnant woman's body temperature is often already elevated around 0.4 degrees above the normal 98.6.)
+           
+         </div>
+         <div id="q1right" class="para">
+           <strong>Great!! Your body temperature is normal.</strong>
+         </div>
+    </div>
+    <div class="slide slide3">
+        <div class="box para">
+          <center>
+            <h3><strong>1.What is your blood pressure</strong></h3><br>
+         <input type="number" name="q2_1" id="bp1">/<input type="number" name="q2_2" id="bp2"><br><br>
+          <input type="checkbox" name="bp" id="q2types">Want to know types of blood pressures during pregnancy.<br> 
+         <button type="button" class="btn btn-primary" onclick="q2ans()">Submit</button>
+          </center>
+        </div>
+        <div id="q2right" class="para">
+           <strong>Great!! Your blood pressure is normal.</strong>
+        </div>
+         <div id="q2wrong" class="para">
+           <h3><strong>You have a high Blood Pressure</strong></h3><br>
+           The woman has high blood pressure if either of these, is true:<br>
+               <strong>The top number is 140 or above.</strong><br>
+               <strong>The bottom number is 90 or above.</strong><br>
+               Normal blood pressure stays between 90/60 mmHg (you say this aloud as ‘ninety over sixty millimetres of mercury’,) and below 140/90 mmHg (‘one hundred and forty over ninety millimetres of mercury’). It does not go up much during pregnancy.<br>
+           <h3><strong>Why is high blood pressure a problem during pregnancy?</strong></h3>
+           High blood pressure during pregnancy poses various risks, including:<br>
+
+           <strong> Decreased blood flow to the placenta.</strong> If the placenta doesn't get enough blood, your baby might receive less oxygen and fewer nutrients. This can lead to slow growth (intrauterine growth restriction), low birth weight or premature birth. Prematurity can lead to breathing problems, increased risk of infection and other complications for the baby.<br>
+           <strong> Placental abruption.</strong> Preeclampsia increases your risk of this condition in which the placenta separates from the inner wall of your uterus before delivery. Severe abruption can cause heavy bleeding, which can be life-threatening for you and your baby.<br>     
+           <strong> Intrauterine growth restriction</strong>. Hypertension might result in slowed or decreased growth of your baby (intrauterine growth restriction).<br>
+           <strong> Injury to your other organs.</strong> Poorly controlled hypertension can result in injury to your brain, heart, lungs, kidneys, liver and other major organs. In severe cases, it can be life-threatening.<br>
+           <strong> Premature delivery.</strong> Sometimes an early delivery is needed to prevent potentially life-threatening complications when you have high blood pressure during pregnancy.<br>
+           <strong> Future cardiovascular disease.</strong> Having preeclampsia might increase your risk of future heart and blood vessel (cardiovascular) disease. Your risk of future cardiovascular disease is higher if you've had preeclampsia more than once or you've had a premature birth due to having high blood pressure during pregnancy.<br>
+
+           <h3><strong>Is it safe to take blood pressure medication during pregnancy?</strong></h3>
+           Some blood pressure medications are considered safe to use during pregnancy, <strong>but angiotensin-converting enzyme (ACE) inhibitors, angiotensin II receptor blockers and renin inhibitors are generally avoided during pregnancy.</strong>
+           <br>
+           Treatment is important, however. High blood pressure puts you at risk of heart attack, stroke and other major complications. And it can be dangerous for your baby.
+           <br>
+           If you need medication to control your blood pressure during pregnancy, your health care provider will prescribe the safest medication at the most appropriate dose. Take the medication exactly as prescribed. Don't stop taking the medication or adjust the dose on your own.
+           <br>
+           <h3><strong>What can I do to reduce the risk of complications?</strong></h3>
+           Taking good care of yourself is the best way to take care of your baby. For example:<br>
+
+           <strong>Keep your prenatal appointments</strong>. Visit your health care provider regularly throughout your pregnancy.
+           Take your blood pressure medication as prescribed. Your health care provider will prescribe the safest medication at the most appropriate dose.<br>
+           <strong>Stay active.</strong> Follow your health care provider's recommendations for physical activity.<br>
+          <strong> Eat a healthy diet.</strong> Ask to speak with a nutritionist if you need additional help.<br>
+           <strong>Know what's off-limits.</strong> Avoid smoking, alcohol and illicit drugs. Talk to your health care provider before taking over-the-counter medications.<br>
+           Researchers continue to study ways to prevent preeclampsia, but so far, no clear strategies have emerged. If you had a hypertensive disorder in a prior pregnancy, your doctor might recommend a daily low-dose aspirin (81 milligrams) beginning late in your first trimester.<br>
+        </div>
+        <div id="q2wrong2" class="para">
+          <h3><strong>You have a Low Blood Pressure</strong></h3><br>
+           The woman has low blood pressure if either of these, is true:<br>
+               <strong>The top number is  less than 90.</strong><br>
+               <strong>The bottom number is less than 50. </strong><br>
+               Normal blood pressure stays between 90/60 mmHg (you say this aloud as ‘ninety over sixty millimetres of mercury’,) and below 140/90 mmHg (‘one hundred and forty over ninety millimetres of mercury’). It does not go up much during pregnancy.<br>
+          <h3><strong>Dangers of low blood pressure during pregnancy</strong></h3>
+          Generally, low blood pressure during pregnancy isn’t a cause for concern unless you experience symptoms. Big drops may be the sign of a serious, or even life-threatening, problem.<br>
+
+          Extremely low blood pressure can lead to falls, organ damage, or shock.<br>
+
+          Low blood pressure may also be a sign of ectopic pregnancy, which happens when a fertilized egg implants outside of a woman’s uterus.<br>
+          
+          <h3><strong>Does blood pressure affect the baby?</strong></h3><br>
+          A large amount of research has been conducted on how high blood pressure during pregnancy affects babies, but data on the effects of low blood pressure is limited.<br>
+
+          Some studies have suggested that low blood pressure during pregnancy may lead to problems, such as stillbirth and low birth weightTrusted Source. However, other research has shown additional risk factors are to blame for these outcomes.<br>
+
+          More research is needed to understand the impact of low prenatal blood pressure on the health of a baby.<br>
+
+          <h3><strong>Treatment</strong></h3><br>
+          Generally, you won’t require treatment for low blood pressure during pregnancy.<br>
+
+          Doctors typically don’t recommend medications for pregnant women unless symptoms are serious or complications are likely.<br>
+
+          Your blood pressure will probably start to rise on its own during your third trimester<br>.
+
+          <h3><strong>Self-care for low blood pressure during pregnancy</strong></h3>
+          If you do experience symptoms of low blood pressure, such as dizziness, you might want to try the following:<br>
+          Avoid getting up quickly when you’re seated or lying down.<br>
+          Don’t stand for long periods of time.<br>
+          Eat small meals throughout the day.<br>
+          Don’t take very hot baths or showers.<br>
+          Drink more water.<br>
+          Wear loose clothing.<br>
+          It’s also a good idea to eat a healthy diet and take your prenatal supplements during your pregnancy to prevent symptoms of low blood pressure.<br>
+        </div>
+        <div id="q2checked" class="para">
+          <h3><strong>What are the types of high blood pressure during pregnancy?</strong></h3>
+          Sometimes high blood pressure is present before pregnancy. In other cases, high blood pressure develops during pregnancy. <br>
+
+          <strong>Gestational hypertension.</strong> Women with gestational hypertension have high blood pressure that develops after 20 weeks of pregnancy. There is no excess protein in the urine or other signs of organ damage. Some women with gestational hypertension eventually develop preeclampsia.<br>
+          <strong>Chronic hypertension</strong>. Chronic hypertension is high blood pressure that was present before pregnancy or that occurs before 20 weeks of pregnancy. But because high blood pressure usually doesn't have symptoms, it might be hard to determine when it began.<br>
+          <strong>Chronic hypertension with superimposed preeclampsia.</strong> This condition occurs in women with chronic hypertension before pregnancy who develop worsening high blood pressure and protein in the urine or other blood pressure related complications during pregnancy.<br>
+          <strong>Preeclampsia.</strong> Preeclampsia occurs when hypertension develops after 20 weeks of pregnancy, and is associated with signs of damage to other organ systems, including the kidneys, liver, blood or brain. Untreated preeclampsia can lead to serious — even fatal — complications for mother and baby, including development of seizures (eclampsia).<br>
+
+          Previously, preeclampsia was diagnosed only if a pregnant woman had high blood pressure and protein in her urine. Experts now know that it's possible to have preeclampsia without having protein in the urine.<br>
+        </div>
+      </div>
+
+        <div class="slide slide4">
+         <div class="box para">
+          <center>
+            <h3><strong>Do you drink Alcohol?</strong></h3>
+            <input type="checkbox" id="q3tru" name="yes3">Yes<br>
+            <input type="checkbox" id="q3fal" name="no3">No<br>
+            <input type="checkbox" id="q3qn">Want to know what happens if we drink alcohol.<br>
+         <button type="button" class="btn btn-primary" onclick="q3ans()">Submit</button>
+          </center>
+         </div>
+         <div id="q3right" class="para">
+           <h3><strong>Great!! It is always good to quit drinking while your pregnant</strong></h3>
+         </div>
+         <div id="q3wrong" class="para">
+           <h3><strong>Why Alcohol is Dangerous?</strong></h3>
+           Alcohol in the mother’s blood passes to the baby through the umbilical cord. Drinking alcohol during pregnancy can cause miscarriage, stillbirth, and a range of lifelong physical, behavioral, and intellectual disabilities. These disabilities are known as fetal alcohol spectrum disorders (FASDs). Children with FASDs might have the following characteristics and behaviors:<br>
+
+           Abnormal facial features, such as a smooth ridge between the nose and upper lip (this ridge is called the philtrum)<br>
+           Small head size<br>
+           Shorter-than-average height<br>
+           Low body weight<br>
+           Poor coordination<br>
+           Hyperactive behavior<br>
+           Difficulty with attention<br>
+           Poor memory<br>
+           Difficulty in school (especially with math)<br>
+           Learning disabilities<br>
+           Speech and language delays<br>
+           Intellectual disability or low IQ<br>
+           Poor reasoning and judgment skills<br>
+           Sleep and sucking problems as a baby<br>
+           Vision or hearing problems<br>
+           Problems with the heart, kidney, or bones<br>
+          <h3><strong>How can you stop drinking alcohol during pregnancy?</strong></h3>
+           You may want to drink alcohol during pregnancy. Alcohol is often part of social activities, like parties or sports events. You may be used to having a glass of wine with dinner or at the end of a busy day. Giving up alcohol during pregnancy may be hard.<br>
+
+           Here are some tips to help you stop drinking alcohol:<br>
+
+           <li>Think about when you usually drink alcohol. Plan to drink other things, like fruity drinks or water. Use a fun straw or put an umbrella in the glass to make it seem more fun.<br></li>
+           <li>Stay away from situations or places where you usually drink, like parties or bars. </li>
+           Get rid of all the alcohol in your home.  <br></li>
+           <li>Tell your partner and your friends and family that you’re not drinking alcohol during pregnancy. Ask them to help and support you. <br></li>
+           If you need help to stop drinking, here's what you can do:<br>
+
+           <li>Talk to your health care provider about alcohol treatment programs. <br></li>
+           <li>Join an Alcoholics Anonymous support group.<br></li>
+         </div>
+      </div>
+
+      <div class="slide slide5"> 
+        <div class="box para">
+          <center>
+       <h3><strong>Do you have any of the following symptoms</strong></h3><br>
+       <li><strong>Pallor — paleness inside the eyelids, pale fingernails and gums</strong></li>
+       <li><strong>Dizziness or fainting </strong></li>
+       <li><strong>Weakness or tiredness </strong></li>
+       <li><strong>Fast pulse (over 100 beats a minute) </strong></li>
+       <li><strong>Difficulty breathing (shortness of breath)</strong></li>
+        <input type="checkbox" name="yes4" id="q4tru">Yes<br>
+        <input type="checkbox" name="no4" id="q4fal">No<br>
+        <input type="checkbox" id="q4qn">Want to know what happens if we have those symptoms<br>
+        <button type="button" class="btn btn-primary" onclick="q4ans()">Submit</button>
+        </center>
+        </div>
+        <div id="q4right" class="para">
+          <h3><strong>Great!! you are good with your pregnency, theses are symptoms of anaemia. It means you dont have anaemia.</strong></h3>
+        </div>
+        <div id="q4wrong" class="para">
+          <h3><strong>Okay, it seems that you might have anaemia, please go and consult your doctor before these symptoms become extreme.</strong></h3>
+        </div>
+        <div id="q4wrong2" class="para">
+          <h3><strong>Do not worry, here are some of the information that will enlighten you about anaemia
+          and also provides treatment and preventions for anaemia</strong></h3><br>
+          <h3><strong>Risks of Anaemia in Pregnancy</strong></h3>
+Severe or untreated iron-deficiency anaemia
+during pregnancy can increase your risk of having:<br>
+• A preterm or low-birth-weight baby<br>
+• A blood transfusion (if you lose a significant amount of blood during delivery)<br>
+• Postpartum depression<br>
+• A baby with anaemia<br>
+• A child with developmental delays<br>
+Untreated folate deficiency can increase your risk of having a:<br>
+• Preterm or low-birth-weight baby<br>
+• Baby with a serious birth defect of the spine or brain (neural tube defects)<br>
+Untreated vitamin B12 deficiency can also raise your risk of having a baby with neural tube defects.<br>
+<h3><strong>Tests for Anaemia</strong></h3>
+During your first prenatal appointment, you'll get a blood test so your doctor can check whether you have anaemia. Blood tests typically include:<br>
+• Hemoglobin test. It measures the amount of hemoglobin -- an iron-rich protein in red blood cells that carries oxygen from the lungs to tissues in the body.<br>
+• Hematocrit test. It measures the percentage of red blood cells in a sample of blood.<br>
+If you have lower than normal levels of hemoglobin or hematocrit, you may have iron-deficiency anemia. Your doctor may check other blood tests to determine if you have iron deficiency or another cause for your anemia.
+Even if you don't have anemia at the beginning of your pregnancy, your doctor will most likely recommend that you get another blood test to check for anemia in your second or third trimester.
+<h3><strong>Treatment for Anemia</strong></h3>
+If you are anemic during your pregnancy, you may need to start taking an iron supplement and/or folic acid supplement in addition to your prenatal vitamins. Your doctor may also suggest that you add more foods that are high in iron and folic acid to your diet.
+In addition, you'll be asked to return for another blood test after a specific period of time so your doctor can check that your hemoglobin and hematocrit levels are improving.<br>
+To treat vitamin B12 deficiency, your doctor may recommend that you take a vitamin B12 supplement.
+The doctor may also recommend that you include more animal foods in your diet, such as:<br>
+• meat<br>
+• eggs<br>
+• dairy products<br>
+Your OB may refer you to a hematologist, a doctor who specializes in anemia/ blood issues. The specialist may see you throughout the pregnancy and help your OB manage the anemia.
+<h3><strong>Preventing Anemia</strong></h3>
+To prevent anemia during pregnancy, make sure you get enough iron. Eat well-balanced meals and add more foods that are high in iron to your diet.
+Aim for at least three servings a day of iron-rich foods, such as:<br>
+• lean red meat, poultry, and fish<br>
+• leafy, dark green vegetables (such as spinach, broccoli, and kale)<br>
+• iron-enriched cereals and grains<br>
+• beans, lentils, and tofu<br>
+• nuts and seeds<br>
+• eggs<br>
+Foods that are high in vitamin C can help your body absorb more iron. These include:<br>
+• citrus fruits and juices<br>
+• strawberries<br>
+• kiwis<br>
+• tomatoes<br>
+• bell peppers<br>
+Try eating those foods at the same time that you eat iron-rich foods. For example, you could drink a glass of orange juice and eat an iron-fortified cereal for breakfast.<br>
+Also, choose foods that are high in folate to help prevent folate deficiency. These include:<br>
+• leafy green vegetables<br>
+• citrus fruits and juices<br>
+• dried beans<br>
+• breads and cereals fortified with folic acid<br>
+Follow your doctor's instructions for taking a prenatal vitamin that contains a sufficient amount of iron and folic acid.
+Vegetarians and vegans should talk with their doctor about whether they should take a vitamin B12 supplement when they're pregnant and breastfeeding.<br>
+        </div>
+    </div>
+   <div class="slide slide6">
+     <div class="box para">
+      <center>
+        <h3><strong>Do you smoke?</strong></h3>
+       <input type="checkbox" name="yes5" id="q5tru">Yes<br>
+        <input type="checkbox" name="no5" id="q5fal">No<br>
+        <input type="checkbox" id="q5qn">Want to know what happens if we smoke<br>
+        <button type="button" class="btn btn-primary" onclick="q5ans()">Submit</button>
+      </center>
+     </div>
+     <div id="q5right" class="para">
+      <h3><strong> Great!! It is always good to not smoke or to quit drinking while your pregnant</strong></h3>
+     </div>
+     <div id="q5wrong2" class="para">
+       Smoking during pregnancy affects you and your baby's health before, during, and after your baby is born. The nicotine (the addictive substance in cigarettes), carbon monoxide, and numerous other poisons you inhale from a cigarette are carried through your bloodstream and go directly to your baby. Smoking while pregnant will:<br>
+• Lower the amount of oxygen available to you and your growing baby<br>
+• Increase your baby's heart rate<br>
+• Increase the chances of miscarriage and stillbirth<br>
+• Increase the risk that your baby is born prematurely and/or born with low birth weight<br>
+• Increase your baby's risk of developing respiratory (lung) problems<br>
+• Increases risks of birth defects<br>
+• Increases risk of Sudden Infant Death Syndrome<br>
+The more cigarettes you smoke per day, the greater your baby's chances of developing these and other health problems. There is no "safe" level of smoking while pregnant.<br>
+</div>
+<div class="para" id="q5wrong">
+<h3><strong>How Can I Quit Smoking Before or During Pregnancy?</strong></h3>
+There are many smoking cessation programs available to help you quit smoking. Ask your health care provider for more information about these programs.
+Here are some tips that may help you kick the habit:<br>
+• Hide your matches, lighters, and ashtrays.<br>
+• Designate your home a non-smoking area.<br>
+• Ask people who smoke not to smoke around you.<br>
+• Drink fewer caffeinated beverages; caffeine may stimulate your urge to smoke. Also avoid alcohol, as it may also increase your urge to smoke and can be harmful to your baby.<br>
+• Change your habits connected with smoking. If you smoked while driving or when feeling stressed, try other activities to replace smoking.<br>
+• Keep mints or gum (preferably sugarless) on hand for those times when you get the urge to smoke.<br>
+• Stay active to keep your mind off smoking and help relieve tension: take a walk, exercise, read a book, or try a new a hobby.<br>
+• Look for support from others. Join a support group or smoking cessation program.<br>
+• Do not go to places where many people are smoking such as bars or clubs, and smoking sections of restaurants.<br>
+<h3><strong>How Will I Feel When I Quit Smoking During Pregnancy?</strong></h3>
+The benefits of not smoking start within days of quitting. After you quit, you and your baby's heartbeat will return to normal, and your baby will be less likely to develop breathing problems.
+You may have symptoms of withdrawal because your body is used to nicotine, the addictive substance in cigarettes. You may crave cigarettes, be irritable, feel very hungry, cough often, get headaches, or have difficulty concentrating. The withdrawal symptoms are only temporary. They are strongest when you first quit but will go away within 10-14 days. When withdrawal symptoms occur, stay in control. Think about your reasons for quitting. Remind yourself that these are signs that your body is healing and getting used to being without cigarettes. Remember that withdrawal symptoms are easier to treat than the major diseases that smoking can cause.<br>
+Even after the withdrawal is over, expect periodic urges to smoke. However, these cravings are generally short-lived and will go away whether you smoke or not. Don't smoke!
+If you relapse and smoke again do not lose hope. Of the people who quit, 75% relapse. Most smokers quit three times before they are successful. If you relapse, don't give up! Plan ahead and think about what you will do next time you get the urge to smoke.<br>
+You may have symptoms of withdrawal because your body is used to nicotine, the addictive substance in cigarettes. You may crave cigarettes, be irritable, feel very hungry, cough often, get headaches, or have difficulty concentrating. The withdrawal symptoms are only temporary. They are strongest when you first quit but will go away within 10-14 days. When withdrawal symptoms occur, stay in control. Think about your reasons for quitting. Remind yourself that these are signs that your body is healing and getting used to being without cigarettes. Remember that withdrawal symptoms are easier to treat than the major diseases that smoking can cause.<br>
+Even after the withdrawal is over, expect periodic urges to smoke. However, these cravings are generally short-lived and will go away whether you smoke or not. Don't smoke!
+If you relapse and smoke again do not lose hope. Of the people who quit, 75% relapse. Most smokers quit three times before they are successful. If you relapse, don't give up! Plan ahead and think about what you will do next time you get the urge to smoke.  <br>
+</div> 
+   </div>
+
+   <div class="slide slide7">
+    <div class="box para">
+      <center>
+      <h3><strong>Does somebody in your house smoke?</strong></h3>
+        <input type="checkbox" name="yes6" id="q6tru">Yes<br>
+        <input type="checkbox" name="no6" id="q6fal">No<br>
+        <input type="checkbox" id="q6qn">Want to know what happens if somebody in our house smoke<br>
+        <button type="button" class="btn btn-primary" onclick="q6ans()">Submit</button>
+      </center>
+    </div>
+    <div id="q6right" class="para">
+      <h3><strong>Great!! its good to know that nobody in your house smokes because during pregnancy it effects you and your child. </strong></h3>
+    </div>
+    <div id="q6wrong" class="para">
+      Secondhand smoke (also called passive smoke or environmental tobacco smoke) is the combination of smoke from a burning cigarette and smoke exhaled by a smoker.
+      The smoke that burns off the end of a cigarette or cigar actually contains more harmful substances (tar, carbon monoxide, nicotine, and others) than the smoke inhaled by the smoker.
+      If you are regularly exposed to secondhand smoke while pregnant, you will have an increased chance of having a stillbirth, a low birthweight baby, a baby with birth defects, and other complications of pregnancy.<br>
+       Babies and children exposed to secondhand smoke may also develop asthma, allergies, more frequent lung and ear infections, and are at higher risk for sudden infant death syndrome (SIDS).
+Your Developing Baby and Smoke<br>
+If you smoke or are exposed to secondhand smoke when you're pregnant, your baby is exposed to harmful chemicals too. This may lead to many serious health problems, including:<br> 
+• Miscarriage<br>
+• Premature birth (born not fully developed)<br>
+• Lower birth weight than expected (possibly meaning a less healthy baby)<br>
+• Sudden infant death syndrome (SIDS)<br>
+• Learning problems and attention-deficit/hyperactivity disorder (ADHD)<br>
+The health risks go up the longer the pregnant woman smokes or is exposed to smoke. Quitting anytime during pregnancy helps—of course, the sooner the better. All pregnant women should stay away from secondhand smoke and ask smokers not to smoke around them. 
+    </div>
+   </div>
+
+   <div class="slide slide8">
+     <div class="box para">
+      <center>
+        <h3><strong>Do you feel depressed during your pregnency</strong></h3>
+        <input type="checkbox" name="yes7" id="q7tru">Yes<br>
+        <input type="checkbox" name="no7" id="q7fal">No<br>
+        <input type="checkbox" id="q7qn">Want to know what happens if your depressed during pregnency<br>
+        <button type="button" class="btn btn-primary" onclick="q7ans()">Submit</button>
+      </center>
+      <div id="q7right" class="para">
+        <h3><strong>Great!! it is really good that you are happy about your pregnancy, because if you are depressed it will effect your baby in the womb.</strong></h3>
+      </div>
+      <div id="q7wrong2" class="para">
+        <h3><strong>How does depression affect pregnant women?</strong></h3>
+If you have depression while you’re pregnant, you may have trouble caring for yourself.<br>
+Depression during pregnancy can also lead to:<br>
+• miscarriage,<br>  
+• delivering before the due date (preterm),<br>
+• giving birth to a small baby (low birth weight).<br>
+• Depression can get in the way of being able to care for yourself during your pregnancy. You may be less able to follow medical recommendations, as well as sleep and eat properly.<br>
+• The condition can also make you more likely to use tobacco, alcohol, and illegal drugs that can harm you and your developing baby.<br>
+
+<h3><strong>What are the signs of depression?</strong></h3>
+Depression can come on slowly. The symptoms are different for everyone. They can be mild, moderate or severe. Some of the more common signs are:<br>
+• changes in appetite, like eating too much or having little interest in food,<br>
+• changes in sleep, such as trouble sleeping or sleeping too much,<br>
+• lack of energy,<br>
+• feeling sad, hopeless or worthless,<br>
+• crying for no reason, and<br>
+• loss of interest or pleasure in activities you normally enjoy.<br>
+
+      </div>
+      <div id ="q7wrong" class="para">
+       <h3><strong> Can depression be cured?</strong></h3>
+With treatment, most people recover from depression. Treatment can include one or more of the following:<br>
+• Social support: Community services or parenting education.<br>
+• Family therapy: With your partner and/or children. This can help when children are older.<br>
+• Individual therapy: Talking one-on-one with a family doctor, psychologist, psychiatrist, social worker, or other professional.<br>
+• Medication: Drugs used most often to treat depression are SSRIs (selective serotonin reuptake inhibitors).<br>
+
+<h3><strong>If I take antidepressants during my pregnancy, will they hurt my baby?</strong></h3>
+You may think you should stop taking medication for depression when you are pregnant. Remember that, if left untreated, depression can have serious effects for both you and your baby. If you are taking antidepressants and are thinking about getting pregnant (or are already pregnant), talk to your doctor first, before stopping any medication.<br>
+Some newborn babies may have symptoms such as irritability, fast breathing, tremors and poor feeding if their mothers took antidepressants during pregnancy. These symptoms are almost always mild and pass quickly, usually within 2 weeks. Serious problems are very rare.<br>
+After your baby is born, she will be watched closely to make sure she is healthy. Your doctors and nurses will make sure that you are both well before letting you go home. You may need to stay an extra day or two in the hospital so that they can be sure.<br>
+      </div>
+   </div> 
+    </div>
+
+     <div class="slide slide9">
+     <div class="box para">
+      <center>
+        <h3><strong>Do you take any unprescribed medicines</strong></h3>
+        <input type="checkbox" name="yes8" id="q8tru">Yes<br>
+        <input type="checkbox" name="no8" id="q8fal">No<br>
+        <input type="checkbox" id="q8qn">Want to know medicines that we can take and not to take<br>
+        <button type="button" class="btn btn-primary" onclick="q8ans()">Submit</button>
+      </center>
+      <div id="q8right" class="para">
+        <h3><strong>Great!! It is good that you dont take any unprescribed medicines, but it will be benefitial if you see what types of medicines that you can consume and not consume</strong></h3>
+      </div>
+      <div id="q8wrong" class="para">
+       
+<h3><strong>What medicines can you take during pregnancy?</strong></h3>
+It can be hard to know if a medicine is safe for your baby. Most medicines are not studied in pregnant women, because researchers worry about how the medicines might affect the baby. But some medicines have been taken for so long by so many women that doctors have a good idea of how safe they are. Talk to your doctor or midwife before you take any medicines.
+In general, doctors say it is usually safe to take:
+o Acetaminophen (such as Tylenol) for fever and pain.
+o Penicillin and some other antibiotics.
+o HIV medicines.<br>
+o Some allergy medicines.<br>
+o Some over-the-counter cold medicines.<br>
+o Some medicines for high blood pressure.<br>
+o Most asthma medicines.<br>
+o Some medicines for depression.<br>
+o Some medicines for heart burn.<br>
+If you are planning a pregnancy, talk to your doctor or midwife about any medicines you are taking, including over-the-counter ones. Some of them may be safe during pregnancy. But others may not be safe. Your doctor or midwife may have you stop taking a medicine or may switch you to another one. Some medicines that aren't safe in the first trimester may be safe to use later in the pregnancy.
+
+<h3><strong>What medicines should you avoid during pregnancy?</strong></h3>
+Some medicines are known to increase the chance of birth defects or other problems. But sometimes, stopping a medicine (such as one that controls seizures) has greater risk to the mother and the baby than continuing to take the medicine. Talk to your doctor about any medicines you take if you are thinking about having a baby or if you are pregnant.
+Some of the over-the-counter medicines that increase the chances of birth defects are:<br>
+• Bismuth subsalicylate (such as Pepto-Bismol).<br>
+• Phenylephrine or pseudoephedrine, which are decongestants. Avoid medicines with these ingredients during the first trimester.
+• Cough and cold medicines that contain guaifenesin. Avoid medicines with this ingredient during the first trimester.
+• Pain medicines like aspirin and ibuprofen (such as Advil and Motrin) and naproxen (such as Aleve). The risk of birth defects with these medicines is low.
+Some of the prescription medicines that increase the chances of birth defects are:<br>
+• The acne medicine isotretinoin (such as Accutane). This medicine is very likely to cause birth defects. It should not be taken by women who are pregnant or who may become pregnant.<br>
+• ACE inhibitors, such as benazepril and lisinopril, which lower blood pressure.<br>
+• Some medicines to control seizures, such as valproic acid.<br>
+• Some antibiotics, such as doxycycline and tetracycline.<br>
+• Methotrexate, which is sometimes used to treat arthritis.<br>
+• Warfarin (such as Coumadin), which helps prevent blood clots.<br>
+• Lithium, which is used to treat bipolar depression.<br>
+• Alprazolam (such as Xanax), diazepam (such as Valium), and some other medicines used to treat anxiety.<br>
+• Paroxetine (such as Paxil), which is used to treat depression and other conditions.<br>
+
+      </div>
+   </div> 
+    </div>
+
+     <div class="slide slide10">
+     <div class="box para">
+      <center>
+        <h3><strong>Do you do any exercises during pregnancy</strong></h3>
+        <input type="checkbox" name="yes9" id="q9tru">Yes<br>
+        <input type="checkbox" name="no9" id="q9fal">No<br>
+        <input type="checkbox" id="q9qn">Want to know some excercises that can be done during pregnacny and also some tips.<br>
+        <button type="button" class="btn btn-primary" onclick="q9ans()">Submit</button>
+      </center>
+      <div id="q9right" class="para">
+        <h3><strong>Great!! it is really good to do some excercises during pregnancy, how ever it is safe to know what kind of excercises that can be performed.</strong></h3>
+      </div>
+      <div id="q9wrong" class="para">
+        <h3><strong>Performing excercises during pregnancy has many benifits.</strong></h3>
+        <h3><strong>Here are some of the benefits from exercise during pregnancy you may experience:</strong></h3>
+
+<li>Reduces backaches, constipation, bloating, and swelling</li>
+<li>May help prevent or treat gestational diabetes</li>
+<li>Increases your energy</li>
+<li>Improves your mood</li>
+<li>Improves your posture</li>
+<li>Promotes muscle tone, strength, and endurance</li>
+<li>Helps you sleep better</li>
+<li>Regular activity also helps keep you fit during pregnancy and may improve your ability to cope with labor. This will make it easier for you to get back in shape after your baby is born.</li>
+
+<h3><strong>Exercise tips when you’re pregnant:</strong></h3>
+• Always warm up before exercising, and cool down afterwards.<br>
+• Try to keep active on a daily basis; 30 minutes of walking each day can be enough, but if you can’t manage that, any amount is better than nothing. If you haven’t been active or are overweight, <br>start with 3-4 days spread across the week.<br>
+• Avoid any strenuous exercise in hot or humid weather.<br>
+• Drink plenty of water and other fluids.<br>
+• If you go to exercise classes, make sure your teacher is properly qualified, and knows that you’re pregnant and how many weeks pregnant you are.<br>
+• You might like to try swimming because the water will support your increased weight. Some local swimming pools provide aquanatal classes with qualified instructors.<br>
+• Walking is a great exercise — it is a moderate aerobic activity but will have minimal stress on your joints. Other good choices are swimming, low-impact aerobics and cycling on a stationary bike.<br>
+</div>
+<div id = "q9wrong2" class="para">
+<h3><strong>Exercises to avoid</strong></h3>
+• Don’t lie flat on your back, particularly after 16 weeks, because the weight of your bump presses on the big blood vessels and can make you feel faint and reduce blood flow to your baby.<br>
+• Don’t take part in contact sports where there’s a risk of being hit, such as kickboxing, judo, squash, tennis, football or rugby.<br>
+• Don’t take part in horse riding, downhill skiing, ice hockey, gymnastics and cycling, because there’s a risk of falling.<br>
+• Don’t go scuba-diving, because the baby has no protection against decompression sickness and gas embolism (gas bubbles in the bloodstream).<br>
+• Don’t exercise at heights over 2,500m above sea level until you have acclimatised. This is because you and your baby are at risk of altitude sickness (a decrease in oxygen).<br>
+• Don’t do repetitive high impact exercise, or with lots of twists and turns, high stepping or sudden stops that cause joint discomfort.<br>
+• Don’t do exercise where you get too hot. Your body’s temperature is slightly higher when you are pregnant. Intensive exercise may cause your core temperature to rise to an unsafe level for your baby. Limit your exercise to moderate intensity, drink plenty of water, wear lightweight clothing and only exercise in cool, well ventilated places (no spas or saunas).<br>
+<h3><strong>Exercises for a fitter pregnancy</strong></h3>
+If you are pregnant, try to fit the exercises listed below into your daily routine. They will strengthen your muscles so that you can carry the extra weight of pregnancy. They’ll also make joints stronger, improve circulation, ease backache and generally help you feel well.<br>
+<h3><strong>Stomach-strengthening exercises</strong></h3>
+As your baby gets bigger, you may find that the hollow in your lower back increases and this can give you backache. These exercises strengthen stomach (abdominal) muscles and ease backache, which can be a problem in pregnancy:<br>
+• Start in a box position (on all fours) with knees under hips, hands under shoulders, with fingers facing forward and abdominals lifted to keep your back straight.<br>
+• Pull in your stomach muscles and raise your back up towards the ceiling, curling the trunk and allowing your head to relax gently forward. Don’t let your elbows lock.<br>
+• Hold for a few seconds then slowly return to the box position.<br>
+• Take care not to hollow your back; it should always return to a straight/neutral position. Do this slowly and rhythmically 10 times, making your muscles work hard and moving your back carefully.<br>
+• Only move your back as far as you can comfortably.<br>
+<h3><strong>Pelvic tilt exercises</strong></h3>
+• Stand with your shoulders and bottom against a wall.<br>
+• Keep your knees soft.<br>
+• Pull your tummy button towards your spine, so that your back flattens against the wall; hold for four seconds and release.<br>
+• Repeat up to 10 times.<br>
+<h3><strong>Pelvic floor exercises</strong></h3>
+Pelvic floor exercises help to strengthen the muscles of the pelvic floor, which come under great strain in pregnancy and childbirth. The pelvic floor consists of layers of muscles that stretch like a supportive hammock from the pubic bone (in front) to the end of the backbone.<br>
+      </div> 
+   </div> 
+    </div>
+
+     <div class="slide slide11">
+     <div class="box para">
+      <center>
+        <h3><strong>During your pregnancy, did you have your teeth cleaned by a dentist or dental hygienist?</strong></h3>
+        <input type="checkbox" name="yes10" id="q10tru">Yes<br>
+        <input type="checkbox" name="no10" id="q10fal">No<br>
+        <button type="button" class="btn btn-primary" onclick="q10ans()">Submit</button>
+      </center>
+      <div id="q10right" class="para">
+        <h3><strong>Good!! It is really crucical to have a regualar checkups with your dentist during pregnacy.</strong></h3>
+      </div>
+      <div id="q10wrong" class="para">
+        <h3><strong>It is really important that you visit your dentist on a regular basis. Here are some important points and suggestion that you must consider</strong></h3>
+        <h3><strong>Dental disease can affect a developing baby</strong></h3>
+Research has found a link between gum disease in pregnant women and premature birth with low birth weight. Babies who are born prematurely may risk a range of health conditions including cerebral palsy and problems with eyesight and hearing.
+<br>
+Estimates suggest that up to 18 out of every 100 premature births may be triggered by periodontal disease, which is a chronic infection of the gums. Appropriate dental treatment for the expectant mother may reduce the risk of premature birth.
+<h3><strong>Causes of dental health problems</strong></h3>
+Common causes of dental health problems during pregnancy can include:<br>
+• gum problems<br>
+• vomiting<br>
+• cravings for sugary foods<br>
+• retching while brushing teeth.<br>
+<h3><strong>Gum problems</strong></h3>
+The hormones associated with pregnancy can make some women susceptible to gum problems including:<br>
+• gingivitis (gum inflammation) – this is more likely to occur during the second trimester. Symptoms include swelling of the gums and bleeding, particularly during brushing and when flossing between teeth<br>
+• undiagnosed or untreated periodontal disease – pregnancy may worsen this chronic gum infection, which is caused by untreated gingivitis and can lead to tooth loss<br>
+• pregnancy epulis or pyogenic granuloma – a localised enlargement of the gum, which can bleed easily. This may require additional professional cleaning, and rarely excision. <br>
+During pregnancy, the gum problems that occur are not due to increased plaque, but a worse response to plaque as a result of increased hormone levels. <br>
+
+Tell your dentist about any gum problems that you might have. Switch to a softer toothbrush and brush your teeth regularly, at least twice every day. Use toothpaste that contains fluoride (if you're not already doing so) to help strengthen your teeth against decay. <br>
+
+If you have gum problems during pregnancy, it is important to get your gums checked by a dentist after you have given birth. While most types of gum problems caused by pregnancy hormones resolve after birth, a small number of women may have developed a deeper level of gum disease that will need treatment to resolve.<br>
+<h3><strong>Vomiting can damage teeth</strong></h3>
+Pregnancy hormones soften the ring of muscle that keeps food inside the stomach. Gastric reflux (regurgitating food or drink) or the vomiting associated with morning sickness can coat your teeth with strong stomach acids. Repeated reflux and vomiting can damage tooth enamel and increase the risk of decay. <br>
+
+Suggestions include:<br>
+• Avoid brushing your teeth immediately after vomiting. While the teeth are covered in stomach acids, the vigorous action of the toothbrush may scratch the tooth enamel. <br>
+• Rinse your mouth thoroughly with plain tap water. <br>
+• Follow up with a fluoridated mouthwash. <br>
+• If you don't have a fluoridated mouthwash, put a dab of fluoridated toothpaste on your finger and smear it over your teeth. Rinse thoroughly with water. <br>
+• Brush your teeth at least an hour after vomiting.<br>
+<h3><strong>Increase your calcium during pregnancy</strong></h3>
+You need to increase your daily amount of calcium during pregnancy. Sufficient calcium will protect your bone mass and meet the nutritional needs of your developing baby.<br>
+
+Good sources of dietary calcium include products such as:<br>
+• milk<br>
+• cheese<br>
+• unsweetened yoghurt<br>
+• calcium-fortified soymilk.<br>
+<h3><strong>Increase your vitamin D during pregnancy</strong></h3>
+Vitamin D helps the body to utilise calcium. Good sources include:<br>
+• cheese<br>
+• fortified margarine<br>
+• fatty fish, such as salmon<br>
+• eggs.<br>
+      </div>
+   </div> 
+    </div>
+
+
+  <div class="slide slide12">
+     <div class="box para">
+      <center>
+        <h3><strong>Do you get any abdominal pains during pregnancy</strong></h3>
+        <input type="checkbox" name="yes11" id="q11tru">Yes<br>
+        <input type="checkbox" name="no11" id="q11fal">No<br>
+        <input type="checkbox" id="q11qn">Want to know if abdominal pains is dangerous<br>
+        <button type="button" class="btn btn-primary" onclick="q11ans()">Submit</button>
+      </center>
+      <div id="q11right" class="para">
+        <h3><strong>Very Good your good with your pregnancy!!</strong></h3>
+      </div>
+      <div id="q11wrong" class="para">
+        <h3><strong>It is normal to have pains during pregnancy. However, there are some other symptoms that comes with abdominal pains which is not good, so take look at those symptoms and know when to approach doctor.</strong></h3>
+       <h3><strong> Is abdominal cramping and pain normal during pregnancy?</strong></h3>
+Some abdominal cramping and pain during pregnancy is often very normal, associated with everything from constipation or increased blood flow to the uterus in the first trimester to Braxton-Hicks contractions or round ligament pain in the second and third trimesters.
+However, sometimes it can be a sign of a urinary tract infection, miscarriage, preeclampsia or other condition that requires medical attention. While it’s always safest to call your doctor about any symptom that concerns you, here’s how to tell when cramps are likely nothing to worry about, and when they might signal something more serious.
+<h3><strong>When to call your doctor</strong></h3>
+Wondering if a cramp is cause for concern? To be on the safe side, you should always contact your practitioner if you’re concerned about cramping. And definitely be sure to call right away or go to the hospital if you’re experiencing severe or continuous abdominal pain.<br>
+Also get in touch with your practitioner if cramps are accompanied by any of the following symptoms:<br>
+• Fever or chills<br>
+• Spotting or bleeding (with or without cramps)<br>
+• Severe headache<br>
+• Vision changes (including blurred vision, seeing flashing lights or spots, sensitivity to light, or temporary blindness)<br>
+• Pain or burning during urination, difficult urinating or blood in your urine<br>
+• Dizziness or feeling faint<br>
+• More than four contractions in one hour, as this may be a sign of labor (and especially if it occurs before 37 weeks of pregnancy, as this may be a sign of preterm labor)<br>
+
+      </div>
+   </div> 
+    </div>
+
+ <div class="slide slide13">
+     <div class="box para">
+      <center>
+        <h3><strong>Do you constantly vomit</strong></h3>
+        <input type="checkbox" name="yes12" id="q12tru">Yes<br>
+        <input type="checkbox" name="no12" id="q12fal">No<br>
+        <input type="checkbox" id="q12qn">Want to know what happens if we constantly vomit<br>
+        <button type="button" class="btn btn-primary" onclick="q12ans()">Submit</button>
+      </center>
+      <div id="q12right" class="para">
+        <h3><strong>Great!! please proceed to the next question</strong></h3>
+      </div>
+      <div id="q12wrong" class="para">
+        Vomiting more than a couple of times a day could dehydrate and weaken you, although it’s unlikely to hurt your baby. You need to speak to your doctor about severe and persistent vomiting (hyperemesis gravidarum), especially if you cannot tolerate any food or drink. You may need treatment, possibly in hospital.
+
+If you’re vomiting during the second half of your pregnancy, you may also have severe pain just below the ribs, and sudden severe swelling in your face, hands or feet. These symptoms may be a sign of pre-eclampsia.
+
+Vomiting accompanied by diarrhoea could be a sign of food poisoning or a stomach bug.
+
+If you’re vomiting, feverish and have pain in your side, lower back or around your genitals, it could mean you have a kidney infection. If you have these symptoms you should contact your doctor.
+<h3><Strong>Try Changing Eating Patterns</Strong></h3>
+• For morning nausea, eat toast, cereal, crackers, or other dry foods before getting out of bed.<br>
+• Eat cheese, lean meat, or other high-protein snack before bedtime.<br>
+• Sip fluids, such as clear fruit juices, water, or ice chips, throughout day. Don’t drink lots of fluid at one time.<br>
+• Eat small meals or snacks every two to three hours instead of three large meals per day.<br>
+• Don’t eat fried, greasy, or spicy foods.<br>
+• Avoid foods with strong odors that are bothersome. Or eat foods cold or at room temperature.<br>
+
+      </div>
+   </div> 
+    </div>
+
+ <div class="slide slide14">
+     <div class="box para">
+      <center>
+        <h3><strong>Do you feel that your vision is blurred and you see flashing spots?</strong></h3>
+        <input type="checkbox" name="yes13" id="q13tru">Yes<br>
+        <input type="checkbox" name="no13" id="q13fal">No<br>
+        <button type="button" class="btn btn-primary" onclick="q13ans()">Submit</button>
+      </center>
+      <div id="q13right" class="para">
+        Great its good that you dont have any eye problems.
+      </div>
+      <div id="q13wrong" class="para">
+        <h3><strong>We have listed some of the suggestions to deal with eye problems during pregnancy</strong></h3>
+        Call your doctor right away if, in the second half of your pregnancy, your eyesight is affected by:<br>
+• double vision<br>
+• blurring<br>
+• dimming<br>
+• flashing spots or lights before your eyes<br>
+<h3><strong>HOW TO DEAL WITH BLURRY VISION?</strong></h3>
+So, if you or someone you know is pregnant and is experiencing blurred vision during pregnancy, here’s what can be done.<br>
+• It’s best to avoid contact lenses during pregnancy as there are multiple and intensive changes going on in the body due to the hormones. One of them is a change in the shape of the corneas. Hence, the contacts may become an incorrect fit and eventually cause irritation and stress. So it’s wise to choose glasses instead. Go for a cheaper pair of glasses because the eye power might alter again in the course of pregnancy.<br>
+• Eye exercises are also a good way. Consult a professional ophthalmologist and he/she can suggest some simple and effective exercises which help the eyes to focus better. An important thing to remember is to never stress your eyes in such situations. Avoid looking at digital screens continually for long and never read or work in poorly lighted surroundings.<br>
+• Above all, do not forget to rest your eyes. A good sleep provides sufficient rest to the eyes, which helps a lot in maintaining a healthy vision.<br>
+As your body heals after delivery, the vision also tends to turn normal in a matter of few weeks. If it still persists for long, make sure to consult an eye doctor. You can also go for a vision corrective surgery like Lasik, if you want to get rid of glasses or contact lenses. However, the doctor may prescribe it before you conceive, or a few months later, post-delivery. Lasik is a safe, reliable and cost-effective procedure which can give you a normal and clear vision.<br>
+
+
+      </div>
+   </div> <br>
+   <center>
+   <input type="submit" value="submit your results" class="btn btn-success">
+   </center>
+    </div>
+
+
+
+
+</form>
+  </div>
+</div>
+</div>
+  <div id="arrow-right" class="arrow"></div>
+</div>
+
+<script type="text/javascript">
+ let sliderImages = document.querySelectorAll(".slide"),
+  arrowLeft = document.querySelector("#arrow-left"),
+  arrowRight = document.querySelector("#arrow-right"),
+  current = 0;
+
+// Clear all images
+function reset() {
+  for (let i = 0; i < sliderImages.length; i++) {
+    sliderImages[i].style.display = "none";
+  }
+}
+
+// Init slider
+function startSlide() {
+  reset();
+  sliderImages[0].style.display = "block";
+}
+
+// Show prev
+function slideLeft() {
+  reset();
+  sliderImages[current - 1].style.display = "block";
+  current--;
+}
+
+// Show next
+function slideRight() {
+  reset();
+  sliderImages[current + 1].style.display = "block";
+  current++;
+}
+
+// Left arrow click
+arrowLeft.addEventListener("click", function() {
+  if (current === 0) {
+    current = sliderImages.length;
+  }
+  slideLeft();
+});
+
+// Right arrow click
+arrowRight.addEventListener("click", function() {
+  if (current === sliderImages.length - 1) {
+    current = -1;
+  }
+  slideRight();
+});
+
+startSlide();
+</script>
+
+
+<script src="quiz.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

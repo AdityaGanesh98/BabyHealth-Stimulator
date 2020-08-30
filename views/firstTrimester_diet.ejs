@@ -1,0 +1,346 @@
+<html>
+<head>
+	<title>BabyHealth Stimulator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="firstTrimester.css">
+	<link rel="stylesheet" type="text/css" href="FirstTrimester_diet.css">
+	<link href="https://fonts.googleapis.com/css?family=Dosis|Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">BabyHealth </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/home">Home </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <% } else { %>
+         <li><a href="/profile"><%= currentUser.username %></a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<div class="container">
+  <div class="jumbotron">
+    
+  	<h2 style="font-size: 50px">First Trimester Diet Plan</h2>
+    <div class="para">
+  	<p>
+  		These meal plans, also called pregnancy diet plans or diet charts, include delicious vegetarian or non-vegetarian options and dishes from North or South India. They are made using foods that have the nutrients you need at your stage of pregnancy. 
+
+        You can pick and choose from the delicious dishes suggested to further adapt the meal plan to your tastes.
+  	</p>
+  	<p>
+  		<h2>How to use our pregnancy diet charts</h2>
+        Our diet charts are a general guide to help you plan your weekly meals better. The aim is to help you identify foods that you like, which are good sources of the nutrients you need at your stage of pregnancy.
+        <br>		
+        Keep in mind that:
+      <ul>
+      	<li>
+      		The plans are made with fruit and vegetables available in all seasons so that no matter what season you are in, you will find food sources in the market for the nutrients you need. If a fruit or vegetable is not available for you, replace it with any other that is in season and offers the same nutrients.
+      	</li>
+      	<li>
+      		A single food can be a source of multiple nutrients. So you might find the same food source is recommended in one trimester for a certain nutrient, and in another trimester for a different one. For example, lentils (dal) are a good source of folic acid, omega 3 fatty acids and iron, particularly for vegetarians. 		
+      	</li>
+      </ul>
+  	</p>
+  	<p>
+  		<h2>What else do I need to know?</h2>
+  		<ul>
+  			<li>
+  				If you have any medical condition, allergies or follow a special diet plan please check with your doctor first before changing your diet. If you have gestational diabetes, please refer to our <a>gestational diabetes meal plan.</a>
+  			</li>
+  			<li>
+  				While using our meal plans, stay hydrated with eight to 12 glasses of water a day.
+                Throughout pregnancy, you need to limit your <strong>caffeine</strong> intake. We’ve highlighted sources of caffeine in the plans to help you keep track of how much caffeine you are having.
+  			</li>
+  		</ul>
+  	</p>
+  </div>
+  	<h2>Diet Plans</h2>
+    <center>
+    <h3>North Indian Vegetarian Plans</h3>
+  <button id="modalBtn1" class="button" >North Indian pregnancy veg diet plan 1</button>
+  <div id="simpleModal1" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn1">&times;</span>
+        <h2><center>North Indian pregnancy veg diet plan 1</center></h2>
+      </div>
+      <div class="modal-body">
+         <img src="https://i.imgur.com/lIsExn4.jpg" title="source: imgur.com" />
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div><br>
+  <button id="modalBtn2" class="button">North Indian pregnancy veg diet plan 2</button>
+  <div id="simpleModal2" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn2">&times;</span>
+        <h2><center>North Indian pregnancy veg diet plan 2</center></h2>
+      </div>
+      <div class="modal-body">
+          <img src="https://i.imgur.com/96mF3tq.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div><br>
+  <button id="modalBtn3" class="button">North Indian pregnancy veg diet plan 3</button>
+  <div id="simpleModal3" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn3">&times;</span>
+        <h2><center>North Indian pregnancy veg diet plan 3</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/SJUq1UV.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div><br>
+  <button id="modalBtn4" class="button">North Indian pregnancy veg diet plan 4</button>
+  <div id="simpleModal4" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn4">&times;</span>
+        <h2><center>North Indian pregnancy veg diet plan 4</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src = "https://i.imgur.com/aB2cTlL.jpg"
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+</center>
+<!-- /======================================================================================================== -->
+<center>
+   <h3>South Indian Vegetarian Plans</h3>
+  <button id="modalBtn9" class="button">South Indian pregnancy veg diet plan 1</button>
+  <div id="simpleModal9" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn9">&times;</span>
+        <h2><center>South Indian pregnancy veg diet plan 1</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/X4RdWNu.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div><br>
+  <button id="modalBtn10" class="button">South Indian pregnancy veg diet plan 2</button>
+  <div id="simpleModal10" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn10">&times;</span>
+        <h2><center>South Indian pregnancy veg diet plan 2</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/DVvKHiq.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div><br>
+  <button id="modalBtn11" class="button">South Indian pregnancy veg diet plan 3</button>
+  <div id="simpleModal11" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn11">&times;</span>
+        <h2><center>South Indian pregnancy veg diet plan 3</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/kkEzffk.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div><br>
+  <button id="modalBtn12" class="button">South Indian pregnancy veg diet plan 4</button>
+  <div id="simpleModal12" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn12">&times;</span>
+        <h2><center>South Indian pregnancy veg diet plan 4</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/gLBGpkp.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+</center>
+<!-- /======================================================================================================== -->
+<center>
+   <h3>North Indian Non Vegetarian Plans</h3>
+   <button id="modalBtn5" class="button">North Indian pregnancy Non veg diet plan 1</button>
+  <div id="simpleModal5" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn5">&times;</span>
+        <h2><center>North Indian pregnancy Non veg diet plan 1</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/fkoKoBX.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+  <button id="modalBtn6" class="button">North Indian pregnancy Non veg diet plan 2</button>
+  <div id="simpleModal6" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn6">&times;</span>
+        <h2><center>North Indian pregnancy Non veg diet plan 2</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src ="https://i.imgur.com/L0uCGKR.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+  <button id="modalBtn7" class="button">North Indian pregnancy Non veg diet plan 3</button>
+  <div id="simpleModal7" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn7">&times;</span>
+        <h2><center>North Indian pregnancy Non veg diet plan 3</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/AW7nQ4W.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+  <button id="modalBtn8" class="button">North Indian pregnancy Non veg diet plan 4</button>
+  <div id="simpleModal8" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn8">&times;</span>
+        <h2><center>North Indian pregnancy Non veg diet plan 4</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/nTSvwaQ.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+  </center>  
+
+<!-- /======================================================================================================== -->
+   <center>
+   <h3>South Indian Non Vegetarian Plans</h3>
+   <button id="modalBtn13" class="button">South Indian pregnancy Non veg diet plan 1</button>
+  <div id="simpleModal13" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn13">&times;</span>
+        <h2><center>South Indian pregnancy Non veg diet plan 1</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/nFZX4dU.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+  <button id="modalBtn14" class="button">South Indian pregnancy Non veg diet plan 2</button>
+  <div id="simpleModal14" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn14">&times;</span>
+        <h2><center>South Indian pregnancy Non veg diet plan 2</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/xeeEXxW.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+  <button id="modalBtn15" class="button">South Indian pregnancy Non veg diet plan 3</button>
+  <div id="simpleModal15" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn15">&times;</span>
+        <h2><center>South Indian pregnancy Non veg diet plan 3</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/veOrL60.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>
+  <button id="modalBtn16" class="button">South Indian pregnancy Non veg diet plan 4</button>
+  <div id="simpleModal16" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="closeBtn16">&times;</span>
+        <h2><center>South Indian pregnancy Non veg diet plan 4</center></h2>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.imgur.com/YufD7xI.jpg">
+      </div>
+      <div class="modal-footer">
+        <h3><center>First Trimester</center></h3>
+      </div>
+    </div>
+  </div>  
+  </center>
+  	
+  </div>
+</div>
+
+<script src="SouthIndianVeg_diet.js"></script>
+<script src="SouthIndianNonVeg_diet.js"></script>
+<script src="northIndian_veg.js"></script>
+<script src="northIndian_Nonveg.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

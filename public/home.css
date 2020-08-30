@@ -1,0 +1,77 @@
+body, html{
+	height: 100%;
+	margin:0;
+	font-size: 16px;
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	line-height: 1.8em;
+	color: #666;
+}
+
+.pimg1{
+	background-image: url(https://images.pexels.com/photos/51953/mother-daughter-love-sunset-51953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+	min-height: 90%;
+}
+
+.pimg2{
+	background-image: url(https://images.pexels.com/photos/249211/pexels-photo-249211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+	min-height: 300px;
+}
+
+.pimg3{
+	background-image: url(https://images.pexels.com/photos/249211/pexels-photo-249211.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+	min-height: 300px;
+}
+
+.pimg4{
+	background-image: url(https://images.pexels.com/photos/701014/pexels-photo-701014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+	min-height: 300px;
+}
+
+.pimg1, .pimg2, .pimg3, .pimg4{
+	/*position: relative;*/
+	/*opacity: 0.70;*/
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.section{
+	text-align: center;
+	padding: 50px 80px; 
+}
+.section-light{
+	background-color: #f4f4f4;
+	color: #666
+}
+
+.section-dark{
+	background-color:#282e34;
+	color: #ddd;
+}
+
+.section-dark{
+  background-color:#282e34;
+  color:#ddd;
+}
+
+.ptext{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+li{
+	text-align: left;
+}

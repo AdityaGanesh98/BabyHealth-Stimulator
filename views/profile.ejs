@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">BabyHealth </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/home">Home </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if(!currentUser){ %>
+        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <% } else { %>
+         <li><a href="/profile"><%= currentUser.username %></a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class = "pimg1">
+    <div class="ptext">
+      <span class="border">
+          <%= currentUser.name %>
+      </span>
+    </div>
+  </div>
+
+  <section class="section section-light">
+    <strong><h2>User Details</h2><br></strong>
+    <p style="text-align:left">
+    
+     <strong>userame:</strong> <%= currentUser.username %> <br>    
+     <strong>EmailId:</strong> <%= currentUser.email %>  <br>
+     <strong>Phone Number:</strong> <%= currentUser.mobile %>  <br>
+    </p>
+  </section>
+  <div class = "pimg2">
+		
+	</div>
+  <div class="section section-dark">
+		<h2>Assessment Results</h2><hr>
+		<p style="text-align:left">
+		   <% for(var i=0; i<quiz.length; i++){%>
+		     <h3>Date:</h3> <%=quiz[i].date %></h4><br>
+		     Body Temperature: <%=quiz[i].q1 %><br>
+		     Blood Pressure: <%=quiz[i].q2_1 %>/<%=quiz[i].q2_2 %><br>
+		     Do you drink Alcohol: <% if(quiz[i].q3_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q3_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br>
+		      <% }  %> 
+			   
+			   Anaemia Symptoms: <% if(quiz[i].q3_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q3_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br>
+		      <% }  %>
+		      
+		      
+		      Do you smoke: <% if(quiz[i].q5_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q5_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br>
+		      <% }  %>
+		      
+		      Does somebody in your house smoke?: <% if(quiz[i].q6_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q6_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br><br>
+		      <% }  %>
+		      
+		      Do you feel depressed during your pregnancy?: <% if(quiz[i].q7_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q7_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br>
+		      <% }  %>
+		      
+		      Do you take any unprescribed medicines: <% if(quiz[i].q8_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q8_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br>
+		      <% }  %>
+		      
+		      Do you do any exercises during pregnancy: <% if(quiz[i].q9_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q9_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br><br>
+		      <% }  %>
+		      
+		      During your pregnancy, did you have your teeth cleaned by a dentist or dental hygienist?: <% if(quiz[i].q10_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q10_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br>
+		      <% }  %>
+		      
+		      Do you get any abdominal pains during pregnancy?: <% if(quiz[i].q11_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q11_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br>
+		      <% }  %>
+		      
+		      Do you constantly vomit: <% if(quiz[i].q12_yes == 'on'){ %>
+		      Yes <br>
+		      <% } else if(quiz[i].q12_no == 'on'){ %>
+		      No <br>
+		      <% } else { %>
+		          Not answered <br>
+		      <% }  %>
+		      
+		      Do you feel that your vision is blurred and you see flashing spots?: <% if(quiz[i].q13_yes == 'on'){ %>
+		      Yes <br><br>
+		      <% } else if(quiz[i].q13_no == 'on'){ %>
+		      No <br><br>
+		      <% } else { %>
+		          Not answered <br><br>
+		      <% }  %>
+		     
+		      <hr>
+			    <% } %>
+
+
+		     
+		      
+		      
+		       
+		      
+		</p>
+	</div>
+
+    <script src="quiz.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

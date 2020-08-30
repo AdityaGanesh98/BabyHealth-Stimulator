@@ -1,0 +1,102 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+.button{
+	border: 2px solid coral;
+	padding: 1em 2em;
+	color: black;
+	border:0;
+	padding: 7px;
+	
+}
+
+.button:hover{
+	background:coral;
+	border-radius: 10px;
+	color: white;
+}
+
+.modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left:0;
+	top:0;
+	height: 100%;
+	width:100%;
+	overflow: auto;/*enable scroll-bar if required*/
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+	background-color: #f4f4f4;
+	margin: 20% auto;
+	width:80%;
+	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),
+	            0 7px 20px 0 rgba(0,0,0,0.17);
+	animation-name: modalopen;
+	animation-duration: 1s;
+}
+
+.modal-header h2, .modal-footer h3{
+	margin: 0;
+}
+
+.modal-header{
+    background: coral;
+    padding: 10px;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+}
+.modal-body{
+	padding: 10px 20px;
+}
+.modal-footer{
+	background: coral;
+	padding: 10px;
+	color:#fff;
+	font-family: 'Playfair Display', serif;
+}
+
+.closeBtn1, .closeBtn2, .closeBtn3, .closeBtn4, .closeBtn5, .closeBtn6, .closeBtn7, .closeBtn8{
+	color: #fff;
+	float:right;
+	font-size: 30px;
+
+}
+
+.closeBtn1:hover, .closeBtn1:focus, .closeBtn2:hover, .closeBtn2:focus, .closeBtn3:hover, .closeBtn3:focus, .closeBtn4:hover, .closeBtn4:focus,
+.closeBtn5:hover, .closeBtn5:focus, .closeBtn6:hover, .closeBtn6:focus, .closeBtn7:hover, .closeBtn7:focus, .closeBtn8:hover, .closeBtn8:focus{
+	color:#000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+@keyframes modalopen{
+	from{opacity: 0}
+	to {opacity: 1}
+}
+
+
+.closeBtn9, .closeBtn10, .closeBtn11, .closeBtn12, .closeBtn13, .closeBtn14, .closeBtn15, .closeBtn16{
+	color: #fff;
+	float:right;
+	font-size: 30px;
+
+}
+
+.closeBtn9:hover, .closeBtn9:focus, .closeBtn10:hover, .closeBtn10:focus, .closeBtn11:hover, .closeBtn11:focus, .closeBtn12:hover, .closeBtn12:focus,
+.closeBtn13:hover, .closeBtn13:focus, .closeBtn14:hover, .closeBtn14:focus, .closeBtn15:hover, .closeBtn15:focus, .closeBtn16:hover, .closeBtn16:focus{
+	color:#000;
+	text-decoration: none;
+	cursor: pointer;
+}
+h3{
+	font-family: 'Playfair Display', serif;
+}
+
+

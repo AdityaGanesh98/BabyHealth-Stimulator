@@ -1,0 +1,54 @@
+
+
+body{
+	background: url(https://images.pexels.com/photos/701014/pexels-photo-701014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	font-family: Lato;
+}
+html{
+	height: 100%;
+}
+.wrap{
+	max-width: 350px;
+	border-radius: 20px;
+	background:rgba(0, 0, 0, 0.8);
+	box-sizing: border-box;
+	padding: 40px;
+	color: #fff;
+	margin-top: 100px;
+    box-shadow: 1px 1px 50px #000;
+    margin-left: 150px;
+    margin-top: 70px;
+}
+
+h2{	
+	text-align: center;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number]{
+	width:100%;
+	box-sizing: border-box;
+	padding: 12px 5px;
+	background: rgba(0, 0, 0, 0.10);
+	outline: none;
+	border: none;
+	border-bottom: 1px dotted #fff;
+	border-radius: 5px;
+	margin:5px;
+	font-weight: bold;
+}
+
+button{
+	width:100%;
+	box-sizing: border-box;
+	padding: 10px 0;
+	margin-top: 30px;
+	outline: none;
+	border:none;
+	background:#60adde;
+	border-radius:20px;
+	font-size: 20px;
+	color: #fff;
+}

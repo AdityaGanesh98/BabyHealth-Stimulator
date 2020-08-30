@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="home.css">
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">BabyHealth </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/home">Home </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<% if(!currentUser){ %>
+        <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+         <% } else { %>
+         <li><a href="/profile"><%= currentUser.username %></a></li>
+        <li><a href="/logout">Logout</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class = "pimg1">
+		<div class="ptext">
+			<span class="border">
+				Baby Health Stimulator
+			</span>
+		</div>
+	</div>
+
+	<section class="section section-light">
+		<h2>About us</h2>
+		<p>
+			Want to know what to expect during your pregnancy? You've come to the right place! we provide a detailed guide to all the changes taking place in your body and in you.
+			Each week of pregnancy includes a description of your baby's development, as well as an explanation of the changes taking place in your body. You'll also find important medical info that will help keep you and your baby healthy.
+		</p>
+	</section>
+
+	<div class = "pimg2">
+		
+	</div>
+
+	<section class="section section-dark">
+		<h2>A word about Trimesters</h2>
+		<p>
+			It's important to remember that your due date is only an estimate — most babies are born between 38 and 42 weeks from the first day of their mom's LMP and only a small percentage of women actually deliver on their due date.
+			Another common term you'll hear throughout your pregnancy is trimester. A pregnancy is divided into trimesters:
+			<ul>
+				<li>the first trimester is from week 1 to the end of week 12</li>
+				<li>the second trimester is from week 13 to the end of week 26</li>
+				<li>the third trimester is from week 27 to the end of the pregnancy</li>
+			</ul>
+		</p>
+	</section>
+
+	<div class = "pimg3">
+		
+	</div>
+
+	<section class="section section-dark">
+		<h2>First Trimester</h2>
+		<p>
+			The first trimester begins on the first day of your last period and lasts until the end of week 12. This means that by the time you know for sure you're pregnant, you might already be five or six weeks pregnant! 
+			A lot happens during these first three months. The fertilised egg rapidly divides into layers of cells and implants in the wall of your womb where it carries on growing. These layers of cells become an embryo, which is what the baby is called at this stage. 
+			During this trimester, your baby grows faster than at any other time. By six weeks, a heartbeat can usually be heard and by the end of week 12, your baby's bones, muscles and all the organs of the body have formed. At this point, your baby looks like a tiny human being and is now called a fetus. He or she will even be practising swallowing!
+		</p>
+		<a href="/firstTrimester">Read more..</a>
+	</section>
+
+	<div class = "pimg4">
+		
+	</div>
+
+
+	<section class="section section-dark">
+		<h2>Second Trimester</h2>
+		<p>
+			The second trimester of your pregnancy is from week 13 to week 28 - roughly months four, five and six. As well as feeling and looking more pregnant during these weeks, you may also have more energy than you did in the first trimester. This will come as a great relief if you have been struggling with sickness, tiredness or anxiety about getting through the first trimester. 
+			As you go through the second trimester, you’ll gradually see your 'bump' grow and later you'll start to feel your baby moving.
+		</p>
+		<a href="/secondTrimester">Read more..</a>
+	</section>
+
+	<div class = "pimg4">
+		
+	</div>
+
+    <section class="section section-dark">
+		<h2>Third Trimester</h2>
+		<p>
+			The third trimester of your pregnancy is from week 29 to week 40 - months seven, eight and nine. Feelings at this stage of pregnancy tend to go from tiredness and worry to excitement about the baby. Your baby continues to grow, and as the third trimester progresses they'll have a better chance if they're born early. You’ll have more checks with the midwife in the third trimester, because it’s important to keep an eye on your and your baby’s health. The position your baby is in becomes more important now and you may start to think about what happens during labour. One important thing to remember in the third trimester is that you should now go to sleep on your side at night (and during any day time naps). You can read more here about why going to sleep on your side in the third trimester is safer for your baby.
+		</p>
+		<a href="thirdTrimester">Read more..</a>
+	</section>
+
+	<div class = "pimg4">
+		
+	</div>
+
+	<section class="section section-light">
+		<h2>Contact</h2>
+		<p class="contacts-left">
+			<a href="#"><i class="fab fa-facebook-square">  Follow us on Facebook</i></a>
+			<br>	
+			<a href="#"><i class="fab fa-instagram">  Follow us on Instagram</i></a>
+		    <br>
+			<a href=""><i class="fas fa-phone-volume">  +91 7893196727</i></a>
+		</p>
+		
+	</section>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

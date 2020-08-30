@@ -1,0 +1,32 @@
+body,html{
+	height: 100%;
+	background: url(https://images.unsplash.com/photo-1510094585675-34596a792631?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+h2,h1{
+	
+	font-family: 'Playfair Display', serif;
+
+}
+
+.jumbotron{
+	  border:10px solid #003366;
+	width: 70%;
+  margin: 10px auto
+}
+
+
+.para{
+	font-family: 'Dosis', sans-serif;
+	font-size: 18px;
+	line-height: 32px;
+	text-align: justify;
+  text-justify: inter-word;
+
+}
+.link{
+	color: white;		
+}
